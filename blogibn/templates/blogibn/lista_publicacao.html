@@ -1,0 +1,12 @@
+{% extends 'blogibn/base.html' %}
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.data_publicacao }}
+            </div>
+           <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.titulo }}</a></h1>
+            <p>{{ post.texto|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
